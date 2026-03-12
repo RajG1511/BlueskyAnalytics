@@ -1,0 +1,14 @@
+{
+  "type": "record",
+  "name": "FollowEvent",
+  "namespace": "com.bluesky.analytics",
+  "doc": "A create/delete event on app.bsky.graph.follow",
+  "fields": [
+    {"name": "did",           "type": "string"},
+    {"name": "time_us",       "type": "long"},
+    {"name": "operation",     "type": "string"},
+    {"name": "rkey",          "type": "string"},
+    {"name": "subject_did",   "type": ["null", "string"], "default": null, "doc": "DID of the account being followed"},
+    {"name": "raw_json",      "type": "string"}
+  ]
+}

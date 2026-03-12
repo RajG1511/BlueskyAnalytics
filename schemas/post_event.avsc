@@ -1,0 +1,20 @@
+{
+  "type": "record",
+  "name": "PostEvent",
+  "namespace": "com.bluesky.analytics",
+  "doc": "A create/update/delete event on app.bsky.feed.post",
+  "fields": [
+    {"name": "did",           "type": "string", "doc": "Decentralized Identifier of the actor"},
+    {"name": "time_us",       "type": "long",   "doc": "Event time in unix microseconds"},
+    {"name": "operation",     "type": "string", "doc": "create | update | delete"},
+    {"name": "rkey",          "type": "string", "doc": "Record key within the collection"},
+    {"name": "cid",           "type": ["null", "string"], "default": null, "doc": "Content Identifier hash"},
+    {"name": "text",          "type": ["null", "string"], "default": null, "doc": "Post text body"},
+    {"name": "created_at",    "type": ["null", "string"], "default": null, "doc": "ISO 8601 from the record"},
+    {"name": "langs",         "type": {"type": "array", "items": "string"}, "default": [], "doc": "Language tags"},
+    {"name": "reply_parent",  "type": ["null", "string"], "default": null, "doc": "AT URI of parent post if reply"},
+    {"name": "reply_root",    "type": ["null", "string"], "default": null, "doc": "AT URI of root post if reply"},
+    {"name": "has_embed",     "type": "boolean", "default": false, "doc": "Whether post has any embed"},
+    {"name": "raw_json",      "type": "string", "doc": "Full original JSON for Bronze-layer passthrough"}
+  ]
+}
